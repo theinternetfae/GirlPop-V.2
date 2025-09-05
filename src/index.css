@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+body {
+  background: #F2F3F4;
+}
+
+@theme {
+  --color-darkpink: #7e1036ee;
+  --color-lightpink: #c14e76;
+}
+
+@layer base {
+  h1 { 
+    @apply text-xl text-darkpink;
+  }
+
+  .landing {
+    background-image: url("/images/medium-shot-friends-having-fun-party.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@layer components {
+
+  .nav {
+    @apply bg-[#FFFFFF] flex items-center py-2 px-4 justify-between shadow-md sticky top-0 z-11;
+
+    & .logo {
+      @apply w-full h-[30px]
+    }
+
+    & .bi-list {
+      @apply text-2xl text-darkpink font-bold
+    }
+
+    & .nav-btn {
+      @apply p-2 bg-lightpink text-white font-bold rounded-md w-[50%]
+    }
+
+    & .navigations {
+      @apply flex gap-20 text-darkpink font-bold text-lg
+    }
+
+    & .cart-count {
+      @apply absolute top-1.5 left-2 text-darkpink
+    }
+
+    & .bi-bag {
+      @apply text-2xl text-darkpink;
+    }
+
+    & .user-nav {
+      @apply flex w-[150px] items-center justify-around
+    }
+
+  }
+
+  .landing {
+    @apply h-[200px] md:h-[400px] shadow-md fixed w-full; 
+
+    & .banner {
+      @apply bg-white/60 backdrop-blur-md p-5 lg:p-8 text-darkpink shadow-md w-[70%] md:w-[40%] lg:w-[30%] flex flex-col items-center rounded-lg font-bold relative mx-auto top-[10%] md:top-[30%] lg:top-[25%]; 
+    
+      & h2 {
+        @apply text-lg lg:text-xl text-shadow-md ;
+      }
+
+      & p {
+        @apply text-shadow-md mt-2;
+      }
+
+      & .banner-search {
+        @apply mt-8 bg-lightpink p-1 lg:p-2 w-[100%] lg:w-[90%] text-white text-sm justify-between md:justify-around flex rounded-md;
+      }
+    }
+  }
+
+  .burger-menu {
+    @apply fixed top-0 right-0 w-[80%] flex flex-col gap-10 z-50 h-screen bg-lightpink/30 shadow-lg backdrop-blur-md p-10;
+
+    & .bi-x {
+      @apply text-4xl text-right text-darkpink;
+    }
+
+    & .burger-navs {
+      @apply flex flex-col gap-15;
+    }
+
+    & .burger-text {
+      @apply text-lg font-bold text-darkpink
+    }
+  }
+
+  .footer {
+    @apply bg-darkpink flex flex-col justify-center items-center gap-2 p-3 text-white fixed w-full bottom-0;
+    
+    & .contact {
+      @apply flex gap-5
+    }
+  }
+}
