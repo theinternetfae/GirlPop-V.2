@@ -20,7 +20,7 @@ function Landing() {
           
             {width >= 764 && <i className="bi bi-search-heart-fill"></i> }
             <input type="text" placeholder="Search..." />
-            <i class="bi bi-arrow-right"></i>
+            <i className="bi bi-arrow-right"></i>
           </div>
         </section>
 

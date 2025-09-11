@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-//Finish up with the animation 'Grander between beautiful' chat and useState to toggle animation
-function BurgerMenu({ exit }) {
+function BurgerMenu({ exit, isOpen }) {
+
 
     return ( 
-        <div className={`burger-menu transform transition-transform duration-300 ease-in-out ${exit ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+        <div className={`burger-menu transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
             <button onClick={exit} className="bi bi-x text-5xl"></button>
             <ul className="burger-navs">
                 <li onClick={exit} className="burger-text"><Link to="/home">Shop</Link></li>

@@ -5,7 +5,7 @@ import BurgerMenu from "./BurgerMenu";
 function NavBar() {
     const [width, setWidth] = useState(window.innerWidth);
     const [burgerStatus, setBurgerStatus] = useState(false);
-    
+
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener("resize", handleResize);
@@ -31,7 +31,7 @@ function NavBar() {
                         () => setBurgerStatus(true)
                     }></i>
 
-                    {burgerStatus && <BurgerMenu exit={() => setBurgerStatus(false)} />}
+                    {<BurgerMenu isOpen={burgerStatus} exit={() => setBurgerStatus(false)} />}
                 </>
             ) : (
                 <>
